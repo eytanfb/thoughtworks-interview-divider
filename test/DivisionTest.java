@@ -11,7 +11,7 @@ public class DivisionTest
 	public void test()
 	{
 		Division division = new Division();
-		
+		int result = division.divide(100, 20);
 	}
 
 }
