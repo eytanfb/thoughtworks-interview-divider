@@ -5,11 +5,13 @@ import org.junit.Test;
 
 public class DivisionTest
 {
-
+	
+	
 	@Test
 	public void test()
 	{
-		fail("Not yet implemented");
+		Division division = new Division();
+		
 	}
 
 }
