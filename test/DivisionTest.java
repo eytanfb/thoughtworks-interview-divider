@@ -1,21 +1,25 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class DivisionTest
 {
+
+	Division division;
 	
+	@Before
+	public void setUp()
+	{
+		division = new Division();
+	}
 	
 	@Test
-	public void testDivide()
-	{
-		Division division = new Division();
-		int result = division.divide(100, 20);
-		assertEquals(5, result);
-		
-		result = division.divide(100, 50);
-		assertEquals(2, result);
+	public void testDivideNormal()
+	{	
+		assertEquals(5, division.divide(100, 20));
+		assertEquals(2, division.divide(100, 50));
 	}
 
 }
