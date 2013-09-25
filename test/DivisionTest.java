@@ -13,6 +13,9 @@ public class DivisionTest
 		Division division = new Division();
 		int result = division.divide(100, 20);
 		assertEquals(5, result);
+		
+		result = division.divide(100, 50);
+		assertEquals(2, result);
 	}
 
 }
