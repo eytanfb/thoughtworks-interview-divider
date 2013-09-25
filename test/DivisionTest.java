@@ -8,10 +8,11 @@ public class DivisionTest
 	
 	
 	@Test
-	public void test()
+	public void testDivide()
 	{
 		Division division = new Division();
 		int result = division.divide(100, 20);
+		assertEquals(5, result);
 	}
 
 }
