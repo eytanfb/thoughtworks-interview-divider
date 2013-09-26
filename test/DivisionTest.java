@@ -21,5 +21,11 @@ public class DivisionTest
 		assertEquals(5, division.divide(100, 20));
 		assertEquals(2, division.divide(100, 50));
 	}
+	
+	@Test
+	public void testDivideByZero()
+	{
+		assertEquals(-1, division.divide(20, 0));
+	}
 
 }
