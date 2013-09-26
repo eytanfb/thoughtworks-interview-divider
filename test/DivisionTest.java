@@ -40,6 +40,7 @@ public class DivisionTest
 	public void testDivideBothNumbersNegative()
 	{
 		assertEquals(2, division.divide(-8, -4));
+		assertEquals(12, division.divide(-144, -12));
 	}
 
 }
