@@ -33,6 +33,7 @@ public class DivisionTest
 	public void testDivideNegativeNumber()
 	{
 		assertEquals(-2, division.divide(-8, 4));
+		assertEquals(-6, division.divide(-36, 6));
 	}
 
 }
