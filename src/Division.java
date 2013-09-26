@@ -15,35 +15,4 @@ public class Division
 		
 		return 0;
 	}
-	
-	private class DivisionStrategy
-	{
-//		abstract protected int divide(int divident, int divisor);
-		
-		private int normalDivision(int dividend, int divisor)
-		{
-			int counter = 0;
-			while(dividend >= divisor)
-			{
-				dividend -= divisor;
-				counter++;
-			}
-			return counter;
-		}
-		
-		private int negativeDividendDivision(int dividend, int divisor)
-		{
-			int counter = 0;
-			
-			dividend -= dividend + dividend;
-			System.out.println(dividend);
-			while(dividend >= divisor)
-			{
-				dividend -= divisor;
-				counter--;
-			}
-			return counter;
-		}
-	}
-
 }
