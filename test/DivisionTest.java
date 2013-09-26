@@ -26,6 +26,7 @@ public class DivisionTest
 	public void testDivideByZero()
 	{
 		assertEquals(-1, division.divide(20, 0));
+		assertEquals(-1, division.divide(-1, 0));
 	}
 
 }
