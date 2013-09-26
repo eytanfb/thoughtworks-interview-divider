@@ -35,5 +35,11 @@ public class DivisionTest
 		assertEquals(-2, division.divide(-8, 4));
 		assertEquals(-6, division.divide(-36, 6));
 	}
+	
+	@Test
+	public void testDivideBothNumbersNegative()
+	{
+		assertEquals(2, division.divide(-8, -4));
+	}
 
 }
