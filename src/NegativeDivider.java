@@ -8,7 +8,6 @@ public class NegativeDivider implements DivisionStrategy
 		int counter = 0;
 		
 		dividend -= dividend + dividend;
-		System.out.println(dividend);
 		while(dividend >= divisor)
 		{
 			dividend -= divisor;
