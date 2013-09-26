@@ -1,4 +1,3 @@
-
 public class Division
 {
 
@@ -8,10 +7,10 @@ public class Division
 			return -1;
 		
 		if(dividend < 0)
-			return new DivisionStrategy().negativeDividendDivision(dividend, divisor);
+			return new NegativeDivider().divide(dividend, divisor);
 		
 		if(dividend >= divisor)
-			return new DivisionStrategy().normalDivision(dividend, divisor);
+			return new NormalDivider().divide(dividend, divisor);
 		
 		return 0;
 	}
