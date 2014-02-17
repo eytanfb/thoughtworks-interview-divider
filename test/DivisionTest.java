@@ -12,7 +12,13 @@ public class DivisionTest
 	@Before
 	public void setUp()
 	{
-		division = new Division();
+		division = new Division(new NormalDivider());
+	}
+	
+	@Test
+	public void testShouldHaveADivisionStrategyForDivision()
+	{
+		assertNotNull(division.strategy);
 	}
 	
 	@Test
@@ -20,13 +26,7 @@ public class DivisionTest
 	{	
 		assertEquals(5, division.divide(100, 20));
 		assertEquals(2, division.divide(100, 50));
-	}
-	
-	@Test
-	public void testDivideByZero()
-	{
-		assertEquals(-1, division.divide(20, 0));
-		assertEquals(-1, division.divide(-1, 0));
+		assertTrue(division.strategy instanceof NormalDivider);
 	}
 	
 	@Test
@@ -34,6 +34,7 @@ public class DivisionTest
 	{
 		assertEquals(-2, division.divide(-8, 4));
 		assertEquals(-6, division.divide(-36, 6));
+		assertTrue(division.strategy instanceof NegativeDivider);
 	}
 	
 	@Test
@@ -41,6 +42,13 @@ public class DivisionTest
 	{
 		assertEquals(2, division.divide(-8, -4));
 		assertEquals(12, division.divide(-144, -12));
+		assertTrue(division.strategy instanceof BothNegativeDivider);
+	}
+	
+	@Test(expected=ArithmeticException.class)
+	public void testDivideByZeroException() throws ArithmeticException
+	{
+		division.divide(2, 0);
 	}
 
 }

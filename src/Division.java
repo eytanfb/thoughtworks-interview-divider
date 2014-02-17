@@ -1,19 +1,34 @@
 public class Division
 {
+	
+	public DivisionStrategy strategy;
+
+	public Division(DivisionStrategy strategy)
+	{
+		this.strategy = strategy;
+	}
 
 	public int divide(int dividend, int divisor)
 	{
 		if(divisor == 0)
-			return -1;
+			throw new ArithmeticException();
 		
 		if(dividend >= divisor)
-			return new NormalDivider().divide(dividend, divisor);
+		{
+			strategy = new NormalDivider();
+			return strategy.divide(dividend, divisor);
+		}
+			
 		
 		if(dividend < 0)
 		{
 			if(divisor < 0)
-				return new BothNegativeDivider().divide(dividend, divisor);
-			return new NegativeDivider().divide(dividend, divisor);
+			{
+				strategy = new BothNegativeDivider();
+				return strategy.divide(dividend, divisor);
+			}
+			strategy = new NegativeDivider();
+			return strategy.divide(dividend, divisor);
 		}
 			
 		return 0;
